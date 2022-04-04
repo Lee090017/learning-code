@@ -1,8 +1,8 @@
 {
     "open-in-browser.default": "{\"open-in-browser.default\":\"Chrome\"}",
-    "code-runner.executorMap":{
-        "cpp": "chcp 65001 >null && cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    }
+    // "code-runner.executorMap":{
+    //     "cpp": "chcp 65001 >null && cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    // }
     // "editor.fontSize": 18,
     // "terminal.integrated.shellArgs.windows": ["/K chcp 65001 >nul"],
     // "terminal.integrated.fontFamily": "Lucida Console"
