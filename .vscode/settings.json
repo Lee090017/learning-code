@@ -1,5 +1,10 @@
 {
     "open-in-browser.default": "{\"open-in-browser.default\":\"Chrome\"}",
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "string": "cpp"
+    },
     // "code-runner.executorMap":{
     //     "cpp": "chcp 65001 >null && cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     // }

@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "E:\\MyGit\\learningCode\\project_01"
             ],
             "defines": [
                 "_DEBUG",

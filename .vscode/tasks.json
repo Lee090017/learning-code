@@ -28,6 +28,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "E:\\MyGit\\learningCode\\project_01",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

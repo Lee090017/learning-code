@@ -1,14 +1,15 @@
 /*
  * @Author: your name
  * @Date: 2022-04-04 20:37:17
- * @LastEditTime: 2022-04-04 21:26:29
+ * @LastEditTime: 2022-04-06 16:06:08
  * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @Description: 数据的输入
  * @FilePath: \learningCode\project_01\InputTest.cpp
  */
 
 #include<iostream>
 #include<stdlib.h>
+#include<string>
 using namespace std;
 int main()
 {
@@ -26,5 +27,13 @@ int main()
 	cout << "Please input a boolean:"<<endl;
 	cin >> y;
 	cout << boolalpha << y << endl;
+	float f = 3.14f;
+	cout << "Please input a float:"<<endl;
+	cin >> f;
+	cout << f << endl;
+	cout << "Please input a string:"<<endl;
+	string str = "";
+	cin >> str;
+	cout << str << endl;
 	return 0;
 }
