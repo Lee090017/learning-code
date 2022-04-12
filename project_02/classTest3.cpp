@@ -1,16 +1,16 @@
 /*
  * @Author: your name
  * @Date: 2022-04-12 17:04:20
- * @LastEditTime: 2022-04-12 21:07:29
+ * @LastEditTime: 2022-04-12 21:48:28
  * @LastEditors: Please set LastEditors
- * @Description: ´ò¿ªkoroFileHeader²é¿´ÅäÖÃ ½øÐÐÉèÖÃ: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @Description: æ‰“å¼€koroFileHeaderæŸ¥çœ‹é…ç½® è¿›è¡Œè®¾ç½®: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \learningCode\project_02\classTest3.cpp
  */
 
 /**
  * @file classTest3.cpp
  * @author your name (you@domain.com)
- * @brief ¶ÔÏóµÄ³õÊ¼»¯ºÍÇåÀí
+ * @brief å¯¹è±¡çš„åˆå§‹åŒ–å’Œæ¸…ç†
  * @version 0.1
  * @date 2022-04-12
  * 
@@ -22,78 +22,78 @@
 #include<string>
 using namespace std;
 
-//¹¹Ôìº¯ÊýºÍÎö¹¹º¯Êý ±àÒëÆ÷Ìá¹©×Ô´øµÄ¿ÕÊµÏÖ
-//¹¹Ôìº¯Êý£ºÖ÷Òª×÷ÓÃÔÚÓÚ´´½¨¶ÔÏóÊ±Îª¶ÔÏóµÄ³ÉÔ±ÊôÐÔ¸³Öµ£¬¹¹Ôìº¯ÊýÓÉ±àÒëÆ÷×Ô¶¯µ÷ÓÃ£¬ÎÞÐëÊÖ¶¯µ÷ÓÃ¡£ ÀàÃû(){} ²»Ð´void
-//Îö¹¹º¯Êý£ºÖ÷Òª×÷ÓÃÔÚÓÚ¶ÔÏóÏú»ÙÇ°ÏµÍ³×Ô¶¯µ÷ÓÃ£¬Ö´ÐÐÒ»Ð©ÇåÀí¹¤×÷¡£ ~ÀàÃû(){}
+//æž„é€ å‡½æ•°å’Œæžæž„å‡½æ•° ç¼–è¯‘å™¨æä¾›è‡ªå¸¦çš„ç©ºå®žçŽ°
+//æž„é€ å‡½æ•°ï¼šä¸»è¦ä½œç”¨åœ¨äºŽåˆ›å»ºå¯¹è±¡æ—¶ä¸ºå¯¹è±¡çš„æˆå‘˜å±žæ€§èµ‹å€¼ï¼Œæž„é€ å‡½æ•°ç”±ç¼–è¯‘å™¨è‡ªåŠ¨è°ƒç”¨ï¼Œæ— é¡»æ‰‹åŠ¨è°ƒç”¨ã€‚ ç±»å(){} ä¸å†™void
+//æžæž„å‡½æ•°ï¼šä¸»è¦ä½œç”¨åœ¨äºŽå¯¹è±¡é”€æ¯å‰ç³»ç»Ÿè‡ªåŠ¨è°ƒç”¨ï¼Œæ‰§è¡Œä¸€äº›æ¸…ç†å·¥ä½œã€‚ ~ç±»å(){}
 
 /**
- * ¹¹Ôìº¯ÊýµÄµ÷ÓÃ¹æÔò
-Ä¬ÈÏÇé¿öÏÂ£¬c++±àÒëÆ÷ÖÁÉÙ¸øÒ»¸öÀàÌí¼Ó3¸öº¯Êý
+ * æž„é€ å‡½æ•°çš„è°ƒç”¨è§„åˆ™
+é»˜è®¤æƒ…å†µä¸‹ï¼Œc++ç¼–è¯‘å™¨è‡³å°‘ç»™ä¸€ä¸ªç±»æ·»åŠ 3ä¸ªå‡½æ•°
 
-1£®Ä¬ÈÏ¹¹Ôìº¯Êý(ÎÞ²Î£¬º¯ÊýÌåÎª¿Õ)
+1ï¼Žé»˜è®¤æž„é€ å‡½æ•°(æ— å‚ï¼Œå‡½æ•°ä½“ä¸ºç©º)
 
-2£®Ä¬ÈÏÎö¹¹º¯Êý(ÎÞ²Î£¬º¯ÊýÌåÎª¿Õ)
+2ï¼Žé»˜è®¤æžæž„å‡½æ•°(æ— å‚ï¼Œå‡½æ•°ä½“ä¸ºç©º)
 
-3£®Ä¬ÈÏ¿½±´¹¹Ôìº¯Êý£¬¶ÔÊôÐÔ½øÐÐÖµ¿½±´
+3ï¼Žé»˜è®¤æ‹·è´æž„é€ å‡½æ•°ï¼Œå¯¹å±žæ€§è¿›è¡Œå€¼æ‹·è´
 
-¹¹Ôìº¯Êýµ÷ÓÃ¹æÔòÈçÏÂ£º
+æž„é€ å‡½æ•°è°ƒç”¨è§„åˆ™å¦‚ä¸‹ï¼š
 
-Èç¹ûÓÃ»§¶¨ÒåÓÐ²Î¹¹Ôìº¯Êý£¬c++²»ÔÚÌá¹©Ä¬ÈÏÎÞ²Î¹¹Ôì£¬µ«ÊÇ»áÌá¹©Ä¬ÈÏ¿½±´¹¹Ôì
+å¦‚æžœç”¨æˆ·å®šä¹‰æœ‰å‚æž„é€ å‡½æ•°ï¼Œc++ä¸åœ¨æä¾›é»˜è®¤æ— å‚æž„é€ ï¼Œä½†æ˜¯ä¼šæä¾›é»˜è®¤æ‹·è´æž„é€ 
 
-Èç¹ûÓÃ»§¶¨Òå¿½±´¹¹Ôìº¯Êý£¬c++²»»áÔÙÌá¹©ÆäËû¹¹Ôìº¯Êý
+å¦‚æžœç”¨æˆ·å®šä¹‰æ‹·è´æž„é€ å‡½æ•°ï¼Œc++ä¸ä¼šå†æä¾›å…¶ä»–æž„é€ å‡½æ•°
  * 
  */
 
 class Person{
 public:
-    //¹¹Ôìº¯Êý
+    //æž„é€ å‡½æ•°
     /**
      * @brief Construct a new Person object
-     * ¹¹Ôìº¯ÊýµÄ·ÖÀà
-     * °´²ÎÊý·ÖÎª£º ÓÐ²Î¹¹ÔìºÍÎÞ²Î¹¹Ôì
-     * °´ÀàÐÍ·ÖÎª£º ÆÕÍ¨¹¹ÔìºÍ¿½±´¹¹Ôì
+     * æž„é€ å‡½æ•°çš„åˆ†ç±»
+     * æŒ‰å‚æ•°åˆ†ä¸ºï¼š æœ‰å‚æž„é€ å’Œæ— å‚æž„é€ 
+     * æŒ‰ç±»åž‹åˆ†ä¸ºï¼š æ™®é€šæž„é€ å’Œæ‹·è´æž„é€ 
      */
     Person(){
-        cout << "ÎÞ²Î¹¹Ôìº¯ÊýµÄµ÷ÓÃ" << endl;
+        cout << "æ— å‚æž„é€ å‡½æ•°çš„è°ƒç”¨" << endl;
     }
 
     Person(string name){
         m_name = name;
-        cout << "ÓÐ²Î¹¹Ôìº¯ÊýµÄµ÷ÓÃ" << endl;
+        cout << "æœ‰å‚æž„é€ å‡½æ•°çš„è°ƒç”¨" << endl;
     }
 
     Person(int age,int height){
         m_age = age;
         Height = new int(height);
-        cout << "ÓÐ²Î¹¹Ôìº¯ÊýµÄµ÷ÓÃ" << endl;
+        cout << "æœ‰å‚æž„é€ å‡½æ•°çš„è°ƒç”¨" << endl;
     }
 
-    //¿½±´¹¹Ôìº¯Êý
+    //æ‹·è´æž„é€ å‡½æ•°
     /*
-        µ÷ÓÃÊ±»ú
-        Ê¹ÓÃÒ»¸öÒÑ¾­´´½¨Íê±ÏµÄ¶ÔÏóÀ´³õÊ¼»¯Ò»¸öÐÂ¶ÔÏó
-        Öµ´«µÝµÄ·½Ê½¸øº¯Êý²ÎÊý´«µÝÖµ
-        Öµ·½Ê½·µ»Ø¾Ö²¿¶ÔÏó
+        è°ƒç”¨æ—¶æœº
+        ä½¿ç”¨ä¸€ä¸ªå·²ç»åˆ›å»ºå®Œæ¯•çš„å¯¹è±¡æ¥åˆå§‹åŒ–ä¸€ä¸ªæ–°å¯¹è±¡
+        å€¼ä¼ é€’çš„æ–¹å¼ç»™å‡½æ•°å‚æ•°ä¼ é€’å€¼
+        å€¼æ–¹å¼è¿”å›žå±€éƒ¨å¯¹è±¡
 
     */
 
-   //ÓÃÉî¿½±´½â¾ö¶ÑÇøÄÚ´æÖØ¸´ÊÍ·ÅµÄÎÊÌâ
+   //ç”¨æ·±æ‹·è´è§£å†³å †åŒºå†…å­˜é‡å¤é‡Šæ”¾çš„é—®é¢˜
     Person(const Person &p){
         m_age = p.m_age;
-        // Height = p.Height;//Ç³¿½±´(±àÒëÆ÷Ä¬ÈÏÊµÏÖ¸ÃÐÐ´úÂë)
-        //Éî¿½±´
-        Height = new int(*p.Height);//ÖØÐÂ¿ª±Ù¶ÑÇøÄÚ´æ
-        cout << "¿½±´¹¹Ôìº¯ÊýµÄµ÷ÓÃ" << endl;
+        // Height = p.Height;//æµ…æ‹·è´(ç¼–è¯‘å™¨é»˜è®¤å®žçŽ°è¯¥è¡Œä»£ç )
+        //æ·±æ‹·è´
+        Height = new int(*p.Height);//é‡æ–°å¼€è¾Ÿå †åŒºå†…å­˜
+        cout << "æ‹·è´æž„é€ å‡½æ•°çš„è°ƒç”¨" << endl;
     }
 
-    //Îö¹¹º¯Êý ½«¶ÑÇøÊý¾ÝÊÍ·Å
+    //æžæž„å‡½æ•° å°†å †åŒºæ•°æ®é‡Šæ”¾
     ~Person(){
-        //Îö¹¹´úÂë
+        //æžæž„ä»£ç 
         if(Height != NULL){
             delete Height;
             Height = NULL;
         }
-        cout << "Îö¹¹º¯ÊýµÄµ÷ÓÃ" << endl; 
+        cout << "æžæž„å‡½æ•°çš„è°ƒç”¨" << endl; 
     }
 
     string getName(){
@@ -111,7 +111,7 @@ public:
 private:
     string m_name;
     int m_age;
-    int * Height;//½«¸ÃÊý¾Ý´æÔÚ¶ÑÇø
+    int * Height;//å°†è¯¥æ•°æ®å­˜åœ¨å †åŒº
 
 };
 
@@ -132,24 +132,24 @@ void test02(){
 }
 
 int main(){
-    //¹¹Ôìº¯ÊýµÄµ÷ÓÃ
+    //æž„é€ å‡½æ•°çš„è°ƒç”¨
 
-    //À¨ºÅ·¨
+    //æ‹¬å·æ³•
     // Person p1;
     // Person p2("lishu");
     // Person p3(p1);
 
-    //ÏÔÊ¾·¨
+    //æ˜¾ç¤ºæ³•
     // Person p4 = Person("wang");
-    // Person("wangwu");//ÄäÃû¶ÔÏó ÌØµã£ºµ±Ç°Ö´ÐÐ½áÊøºó½«Ö±½ÓÊÍ·Å
-    //²»ÄÜÓÃ¿½±´¹¹Ôìº¯Êý³õÊ¼»¯ÄäÃû¶ÔÏó£¬±àÒëÆ÷ÈÏÎªPerson (p)  ===>  Person p;
+    // Person("wangwu");//åŒ¿åå¯¹è±¡ ç‰¹ç‚¹ï¼šå½“å‰æ‰§è¡Œç»“æŸåŽå°†ç›´æŽ¥é‡Šæ”¾
+    //ä¸èƒ½ç”¨æ‹·è´æž„é€ å‡½æ•°åˆå§‹åŒ–åŒ¿åå¯¹è±¡ï¼Œç¼–è¯‘å™¨è®¤ä¸ºPerson (p)  ===>  Person p;
     
-    //ÒþÊ½×ª»»·¨
-    // Person p5 = p1;//¿½±´¹¹Ôì
+    //éšå¼è½¬æ¢æ³•
+    // Person p5 = p1;//æ‹·è´æž„é€ 
 
     cout << "====================" << endl;
-    //Éî¿½±´ºÍÇ³¿½±´
-    test02();//Ç³¿½±´Ôì³É¶ÑÇøµÄÄÚ´æÖØ¸´ÊÍ·Å£¬Éî¿½±´½«ÔÚ¶ÑÇøÖØÐÂ¿ª±ÙÒ»¿éÄÚ´æ
+    //æ·±æ‹·è´å’Œæµ…æ‹·è´
+    test02();//æµ…æ‹·è´é€ æˆå †åŒºçš„å†…å­˜é‡å¤é‡Šæ”¾ï¼Œæ·±æ‹·è´å°†åœ¨å †åŒºé‡æ–°å¼€è¾Ÿä¸€å—å†…å­˜
 
     system("pause");
     return 0;
