@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-12 17:04:20
- * @LastEditTime: 2022-04-12 21:48:28
+ * @LastEditTime: 2022-04-13 15:25:39
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \learningCode\project_02\classTest3.cpp
@@ -71,9 +71,9 @@ public:
     //拷贝构造函数
     /*
         调用时机
-        使用一个已经创建完毕的对象来初始化一个新对象
-        值传递的方式给函数参数传递值
-        值方式返回局部对象
+        1.使用一个已经创建完毕的对象来初始化一个新对象
+        2.值传递的方式给函数参数传递值
+        3.值方式返回局部对象
 
     */
 

@@ -1,16 +1,16 @@
 /*
  * @Author: your name
  * @Date: 2022-04-12 21:08:41
- * @LastEditTime: 2022-04-12 21:46:57
+ * @LastEditTime: 2022-04-13 15:24:35
  * @LastEditors: Please set LastEditors
- * @Description: ³õÊ¼»¯ÁĞ±í¡¢Àà¶ÔÏó×÷ÎªÀà³ÉÔ±£¬¾²Ì¬³ÉÔ±º¯Êı
+ * @Description: åˆå§‹åŒ–åˆ—è¡¨ã€ç±»å¯¹è±¡ä½œä¸ºç±»æˆå‘˜ï¼Œé™æ€æˆå‘˜å‡½æ•°
  * @FilePath: \learningCode\project_02\classTest4.cpp
  */
 
 #include <iostream>
 using namespace std;
 
-//Àà¶ÔÏó×÷Îª¶ÔÏó³ÉÔ±
+//ç±»å¯¹è±¡ä½œä¸ºå¯¹è±¡æˆå‘˜
 class Phone{
 public:
     string p_name;
@@ -25,48 +25,48 @@ public:
     string m_name;
     int m_age;
     int m_height;
-    Phone m_phone;//ÊÖ»ú
+    Phone m_phone;//æ‰‹æœº
 
-    //´«Í³µÄ³õÊ¼»¯·½Ê½
+    //ä¼ ç»Ÿçš„åˆå§‹åŒ–æ–¹å¼
     // Person(string name, int age, int height){
     //     m_name = name;
     //     m_age = age;
     //     m_height = height;
     // }
 
-    //³õÊ¼»¯ÁĞ±í
+    //åˆå§‹åŒ–åˆ—è¡¨
     Person():m_name("Mary"),m_age(10),m_height(180),m_phone("HuaWei"){
         
     }
 
-    //ÒşÊ½×ª»» Phone m_phone = "xxxx"; Phone m_phone = Phone("xxxx"); 
+    //éšå¼è½¬æ¢ Phone m_phone = "xxxx"; Phone m_phone = Phone("xxxx"); 
     Person(string a, int b, int c, string d):m_name(a),m_age(b),m_height(c),m_phone(d){
         
     }
 
-    //¾²Ì¬³ÉÔ±º¯Êı
-    //ËùÓĞµÄ¶ÔÏó¹²ÏíÍ¬Ò»¸öº¯Êı
-    //¾²Ì¬³ÉÔ±º¯ÊıÖ»ÄÜ·ÃÎÊ¾²Ì¬³ÉÔ±
-    //¸Ã¾²Ì¬³ÉÔ±¿ÉÒÔÍ¨¹ı¶ÔÏó»òÕßÀàÃû·ÃÎÊ
+    //é™æ€æˆå‘˜å‡½æ•°
+    //æ‰€æœ‰çš„å¯¹è±¡å…±äº«åŒä¸€ä¸ªå‡½æ•°
+    //é™æ€æˆå‘˜å‡½æ•°åªèƒ½è®¿é—®é™æ€æˆå‘˜
+    //è¯¥é™æ€æˆå‘˜å¯ä»¥é€šè¿‡å¯¹è±¡æˆ–è€…ç±»åè®¿é—®
 
     static void func(){
-        cout << "static void func()µ÷ÓÃ " << count << " ´Î" << endl;
+        cout << "static void func()è°ƒç”¨ " << count << " æ¬¡" << endl;
         count++;
         // m_name = "leege";
     }
 
-    //¾²Ì¬³ÉÔ±
+    //é™æ€æˆå‘˜
     static int count;
 
 private:
     static void pfunc(){
-        cout << "private static void func()µ÷ÓÃ " << endl;
+        cout << "private static void func()è°ƒç”¨ " << endl;
     } 
 
 
 };
 
-int Person::count = 0;//¾²Ì¬³ÉÔ±³õÊ¼»¯
+int Person::count = 0;//é™æ€æˆå‘˜åˆå§‹åŒ–
 
 
 void test01(){
@@ -87,14 +87,14 @@ void test02(){
 void test03(){
     Person p1;
     p1.func();
-    Person::func();//ÀàÃûµ÷ÓÃ
-    // p1.pfunc();//ÀàÍâ·ÃÎÊ²»µ½Ë½ÓĞ¾²Ì¬³ÉÔ±º¯Êı
+    Person::func();//ç±»åè°ƒç”¨
+    // p1.pfunc();//ç±»å¤–è®¿é—®ä¸åˆ°ç§æœ‰é™æ€æˆå‘˜å‡½æ•°
 }
 
 int main(){
 
-    //³õÊ¼»¯ÁĞ±í
-    //¹¹Ôìº¯Êı():ÊôĞÔ1(Öµ1)£¬ÊôĞÔ2(Öµ2)¡£¡£¡£{}
+    //åˆå§‹åŒ–åˆ—è¡¨
+    //æ„é€ å‡½æ•°():å±æ€§1(å€¼1)ï¼Œå±æ€§2(å€¼2)ã€‚ã€‚ã€‚{}
     test01();
     cout << "====================" << endl;
     test02(); //
