@@ -1,40 +1,40 @@
 /*
  * @Author: your name
  * @Date: 2022-04-22 15:13:45
- * @LastEditTime: 2022-04-22 21:40:48
+ * @LastEditTime: 2022-04-26 15:23:52
  * @LastEditors: Please set LastEditors
- * @Description: °¸Àı£ºÔ±¹¤ĞÅÏ¢¹ÜÀí
+ * @Description: æ¡ˆä¾‹ï¼šå‘˜å·¥ä¿¡æ¯ç®¡ç†
  * @FilePath: \learningCode\project_03\employeeAPP.cpp
  */
 /*
-ÈıÀàÖ°¹¤£ºÆÕÍ¨Ô±¹¤¡¢¾­Àí¡¢ÀÏ°å£¬ÏÔÊ¾ĞÅÏ¢Ê±£ºÖ°¹¤±àºÅ¡¢Ö°¹¤ĞÕÃû¡¢Ö°¹¤¸ÚÎ»¡¢Ö°Ôğ
+ä¸‰ç±»èŒå·¥ï¼šæ™®é€šå‘˜å·¥ã€ç»ç†ã€è€æ¿ï¼Œæ˜¾ç¤ºä¿¡æ¯æ—¶ï¼šèŒå·¥ç¼–å·ã€èŒå·¥å§“åã€èŒå·¥å²—ä½ã€èŒè´£
 
 
 
 */
 #include<iostream>
 #include<string>
-#include<fstream>//Ìí¼ÓĞÅÏ¢µ½ÎÄ¼ş
+#include<fstream>//æ·»åŠ ä¿¡æ¯åˆ°æ–‡ä»¶
 using namespace std;
 
-#define MAX_NUM 20 //Ô±¹¤ÉÏÏŞ
-// #define EmployeeJob "Íê³É¾­Àí½»¸øµÄÈÎÎñ"
-// #define ManageJob "Íê³ÉÀÏ°å½»¸øµÄÈÎ£¬²¢ÏÂ·¢ÈÎÎñ¸øÔ±¹¤"
-// #define BossJob "¹ÜÀí¹«Ë¾ËùÓĞÊÂÎñ"
+#define MAX_NUM 20 //å‘˜å·¥ä¸Šé™
+// #define EmployeeJob "å®Œæˆç»ç†äº¤ç»™çš„ä»»åŠ¡"
+// #define ManageJob "å®Œæˆè€æ¿äº¤ç»™çš„ä»»ï¼Œå¹¶ä¸‹å‘ä»»åŠ¡ç»™å‘˜å·¥"
+// #define BossJob "ç®¡ç†å…¬å¸æ‰€æœ‰äº‹åŠ¡"
 
-//²¿ÃÅÃû³ÆÊı×é
-const string c_department[3] = {"ÆÕÍ¨Ô±¹¤","¾­Àí","ÀÏ°å"};
-//²¿ÃÅÖ°Ôğ
-const string c_position[3] = {"Íê³É¾­Àí½»¸øµÄÈÎÎñ","Íê³ÉÀÏ°å½»¸øµÄÈÎ£¬²¢ÏÂ·¢ÈÎÎñ¸øÔ±¹¤","¹ÜÀí¹«Ë¾ËùÓĞÊÂÎñ"};
+//éƒ¨é—¨åç§°æ•°ç»„
+const string c_department[3] = {"æ™®é€šå‘˜å·¥","ç»ç†","è€æ¿"};
+//éƒ¨é—¨èŒè´£
+const string c_position[3] = {"å®Œæˆç»ç†äº¤ç»™çš„ä»»åŠ¡","å®Œæˆè€æ¿äº¤ç»™çš„ä»»ï¼Œå¹¶ä¸‹å‘ä»»åŠ¡ç»™å‘˜å·¥","ç®¡ç†å…¬å¸æ‰€æœ‰äº‹åŠ¡"};
 
-//³éÏóÀà
+//æŠ½è±¡ç±»
 class EmployeeBase{
 public:
-    int id;//Ô±¹¤±àºÅ
-    string name;//ĞÕÃû
-    int department_id;//²¿ÃÅ±àºÅ
-    string department;//²¿ÃÅ
-    string position;//Ö°Ôğ
+    int id;//å‘˜å·¥ç¼–å·
+    string name;//å§“å
+    int department_id;//éƒ¨é—¨ç¼–å·
+    string department;//éƒ¨é—¨
+    string position;//èŒè´£
 
     void changeId(int id){
         this->id = id;
@@ -52,7 +52,7 @@ public:
     
 };
 
-//ÆÕÍ¨Ô±¹¤
+//æ™®é€šå‘˜å·¥
 class Employee : public EmployeeBase{
 public:
     Employee(int id,string name,int department_id){
@@ -64,7 +64,7 @@ public:
     }
 };
 
-//¾­Àí
+//ç»ç†
 class Mannage : public EmployeeBase{
 public:
    Mannage(int id,string name,int department_id){
@@ -76,7 +76,7 @@ public:
     }
 };
 
-//ÀÏ°å
+//è€æ¿
 class Boss : public EmployeeBase{
 public:
     Boss(int id,string name,int department_id){
@@ -88,11 +88,11 @@ public:
     }
 };
 
-//Ö°¹¤¹ÜÀíÀà
+//èŒå·¥ç®¡ç†ç±»
 class EmployeeAPP{
 public:
-    EmployeeBase ** empArr;//Î¬»¤Ö°¹¤Êı×éÖ¸Õë
-    int numOfEmp;//Ô±¹¤µÄ¸öÊı
+    EmployeeBase ** empArr;//ç»´æŠ¤èŒå·¥æ•°ç»„æŒ‡é’ˆ
+    int numOfEmp;//å‘˜å·¥çš„ä¸ªæ•°
     // EmployeeBase * p_emp;
 
     EmployeeAPP(){
@@ -107,46 +107,46 @@ public:
         }
     }
 
-    //ÎÄ¼ş²Ù×÷
-    //¶ÁÎÄ¼şÔ±¹¤¸öÊı£¬²¢³õÊ¼»¯Êı×é
+    //æ–‡ä»¶æ“ä½œ
+    //è¯»æ–‡ä»¶å‘˜å·¥ä¸ªæ•°ï¼Œå¹¶åˆå§‹åŒ–æ•°ç»„
     void inti_numOfEmp(){
-        //¶ÁÈ¡ÏÖÓĞÎÄ¼ş
+        //è¯»å–ç°æœ‰æ–‡ä»¶
         ifstream ifs;
         ifs.open("init_employee.txt",ios::in);
-        if(!ifs.is_open()){//±¾µØÎÄ¼şÊÇ·ñ´æÔÚ
+        if(!ifs.is_open()){//æœ¬åœ°æ–‡ä»¶æ˜¯å¦å­˜åœ¨
             return;
         }
-        //Í³¼ÆÔ±¹¤ÊıÁ¿
+        //ç»Ÿè®¡å‘˜å·¥æ•°é‡
         string buff;
         while(getline(ifs, buff)){
             numOfEmp++;
         }
-        //³õÊ¼»¯Êı×é£¬¿ª±ÙĞÂ¿Õ¼ä
+        //åˆå§‹åŒ–æ•°ç»„ï¼Œå¼€è¾Ÿæ–°ç©ºé—´
         empArr = new EmployeeBase *[numOfEmp];
-        cout << "µ¼Èë" << numOfEmp << "×éÊı¾İ" << endl;
+        cout << "å¯¼å…¥" << numOfEmp << "ç»„æ•°æ®" << endl;
         ifs.close();
     }
 
-    //ÎÄ¼ş³õÊ¼»¯
+    //æ–‡ä»¶åˆå§‹åŒ–
     void init(){
-        //¶ÁÈ¡ÏÖÓĞÎÄ¼ş
+        //è¯»å–ç°æœ‰æ–‡ä»¶
         ifstream ifs;
         ifs.open("init_employee.txt",ios::in);
-        if(!ifs.is_open()){//±¾µØÎÄ¼şÊÇ·ñ´æÔÚ
-            cout << "±¾µØÎÄ¼ş²»´æÔÚ" << endl;
+        if(!ifs.is_open()){//æœ¬åœ°æ–‡ä»¶æ˜¯å¦å­˜åœ¨
+            cout << "æœ¬åœ°æ–‡ä»¶ä¸å­˜åœ¨" << endl;
             return;
         }
         int id;
         string name;
         int department_id;
-        int index = 0;//Í³¼ÆÎÄ¼şµÄÔ±¹¤¸öÊı
+        int index = 0;//ç»Ÿè®¡æ–‡ä»¶çš„å‘˜å·¥ä¸ªæ•°
         EmployeeBase * temp = NULL;
         while (ifs >> id && ifs >> name && ifs >> department_id) 
         {
-            // cout << id << "," << name << "," << department_id << endl;//´òÓ¡Ã¿´Î¶ÁÈëµÄÊı¾İ
-            if(department_id == 1){//ÆÕÍ¨Ô±¹¤
+            // cout << id << "," << name << "," << department_id << endl;//æ‰“å°æ¯æ¬¡è¯»å…¥çš„æ•°æ®
+            if(department_id == 1){//æ™®é€šå‘˜å·¥
                 temp = new Employee(id,name,department_id);
-            }else if(department_id == 2){//¾­Àí
+            }else if(department_id == 2){//ç»ç†
                 temp = new Mannage(id,name,department_id);
             }else{
                 temp = new Boss(id,name,department_id);
@@ -155,42 +155,42 @@ public:
             index++;
         }
         ifs.close();
-        cout << "³õÊ¼»¯³É¹¦" << endl;
+        cout << "åˆå§‹åŒ–æˆåŠŸ" << endl;
     }
 
-    //Çå³ıÎÄ¼şĞÅÏ¢
+    //æ¸…é™¤æ–‡ä»¶ä¿¡æ¯
     void clearAll(){
         ofstream ofs;
-        ofs.open("employee.txt",ios::out | ios::trunc);//Èç¹ûÎÄ¼ş´æÔÚÏÈÉ¾³ıÔÙ´´½¨
-        ofs << "±àºÅ" << "\tĞÕÃû" << "\t²¿ÃÅ±àºÅ" << "\tÖ°¹¤ĞÅÏ¢" << endl;
+        ofs.open("employee.txt",ios::out | ios::trunc);//å¦‚æœæ–‡ä»¶å­˜åœ¨å…ˆåˆ é™¤å†åˆ›å»º
+        ofs << "ç¼–å·" << "\tå§“å" << "\téƒ¨é—¨ç¼–å·" << "\tèŒå·¥ä¿¡æ¯" << endl;
         ofs.close();
     }
 
-    //Ğ´ÎÄ¼şµ½ÎÄ±¾
+    //å†™æ–‡ä»¶åˆ°æ–‡æœ¬
     void addEmployeeToFile(EmployeeBase *emp){
         ofstream ofs;
-        ofs.open("employee.txt",ios::app | ios::out);//×·¼Óµ½½áÎ²
+        ofs.open("employee.txt",ios::app | ios::out);//è¿½åŠ åˆ°ç»“å°¾
         ofs << emp->id << "\t" << emp->name << "\t" << emp->department_id << "\t" << emp->department <<endl;
         ofs.close();
     }
 
-    //¸üĞÂÃ¿´ÎµÄÎÄ¼ş
+    //æ›´æ–°æ¯æ¬¡çš„æ–‡ä»¶
     void refreshFile(){
         clearAll();
-        if(numOfEmp == 0){//Çå¿ÕÎÄ¼ş
+        if(numOfEmp == 0){//æ¸…ç©ºæ–‡ä»¶
             return;
         }
-        EmployeeBase * temp = NULL;//Ö¸ÏòĞÂÌí¼Ó¶ÔÏóµÄÁÙÊ±Ö¸Õë
+        EmployeeBase * temp = NULL;//æŒ‡å‘æ–°æ·»åŠ å¯¹è±¡çš„ä¸´æ—¶æŒ‡é’ˆ
         for(int i = 0; i < numOfEmp;i++){
             temp = empArr[i];
             addEmployeeToFile(temp);
         }
     }
 
-    //Çå³ıËùÓĞĞÅÏ¢
+    //æ¸…é™¤æ‰€æœ‰ä¿¡æ¯
     void clearInfo(){
-        cout << "ÊÇ·ñÇå³ıËùÓĞĞÅÏ¢£¿" << endl;
-        cout << "1.ÊÇ/0.·ñ" << endl;
+        cout << "æ˜¯å¦æ¸…é™¤æ‰€æœ‰ä¿¡æ¯ï¼Ÿ" << endl;
+        cout << "1.æ˜¯/0.å¦" << endl;
         bool flag = 0;
         cin >> flag;
         if(flag){
@@ -200,35 +200,35 @@ public:
         }  
     }
 
-    //Ìí¼ÓÔ±¹¤
+    //æ·»åŠ å‘˜å·¥
     void addEmployee(){
-        cout << "ÇëÊäÈëÔö¼ÓµÄÖ°¹¤ÊıÁ¿£º" << endl;
+        cout << "è¯·è¾“å…¥å¢åŠ çš„èŒå·¥æ•°é‡ï¼š" << endl;
         int addNum = 0;
         cin >> addNum;
         if (addNum > 0){
-            int newSize = numOfEmp + addNum;//ĞÂÔ±¹¤¸öÊı
-            //¿ª±ÙĞÂ¿Õ¼ä
+            int newSize = numOfEmp + addNum;//æ–°å‘˜å·¥ä¸ªæ•°
+            //å¼€è¾Ÿæ–°ç©ºé—´
             EmployeeBase ** newSpace = new EmployeeBase *[newSize];
-            //½«Ô­¿Õ¼ä´æ·Åµ½ĞÂ¿Õ¼ä
+            //å°†åŸç©ºé—´å­˜æ”¾åˆ°æ–°ç©ºé—´
             for(int i = 0; i < numOfEmp; i++){
                newSpace[i] = empArr[i];
             }
-            //ÊäÈëĞÂÊı¾İ
+            //è¾“å…¥æ–°æ•°æ®
             for(int i = 0; i < addNum; i++){
-                cout << "ÇëÊäÈëµÚ" << i+1 << "¸öĞÂÖ°¹¤±àºÅ£º" <<endl;
+                cout << "è¯·è¾“å…¥ç¬¬" << i+1 << "ä¸ªæ–°èŒå·¥ç¼–å·ï¼š" <<endl;
                 int id = 0;
                 cin >> id;
-                cout << "ÇëÊäÈëµÚ" << i+1 << "¸öĞÂÖ°¹¤ĞÕÃû£º" <<endl;
+                cout << "è¯·è¾“å…¥ç¬¬" << i+1 << "ä¸ªæ–°èŒå·¥å§“åï¼š" <<endl;
                 string name;
                 cin >> name;
-                cout << "ÇëÑ¡Ôñ¸ÃÖ°¹¤¸ÚÎ»£º" <<endl;
-                cout << "1¡¢ÆÕÍ¨Ö°¹¤£º" <<endl;
-                cout << "2¡¢¾­Àí£º" <<endl;
-                cout << "3¡¢ÀÏ°å£º" <<endl;
+                cout << "è¯·é€‰æ‹©è¯¥èŒå·¥å²—ä½ï¼š" <<endl;
+                cout << "1ã€æ™®é€šèŒå·¥ï¼š" <<endl;
+                cout << "2ã€ç»ç†ï¼š" <<endl;
+                cout << "3ã€è€æ¿ï¼š" <<endl;
                 int department_id;
                 cin >> department_id;
 
-                EmployeeBase * temp = NULL;//Ö¸ÏòĞÂÌí¼Ó¶ÔÏóµÄÁÙÊ±Ö¸Õë
+                EmployeeBase * temp = NULL;//æŒ‡å‘æ–°æ·»åŠ å¯¹è±¡çš„ä¸´æ—¶æŒ‡é’ˆ
                 switch(department_id){
                     case 1:
                         temp = new Employee(id,name,1);
@@ -240,54 +240,54 @@ public:
                         temp = new Boss(id,name,3);
                         break;
                     default:
-                        cout << "ÊäÈë¸ÚÎ»±àºÅ´íÎó£¬ÇëÖØĞÂÌí¼ÓĞÂÔ±¹¤" <<endl;
+                        cout << "è¾“å…¥å²—ä½ç¼–å·é”™è¯¯ï¼Œè¯·é‡æ–°æ·»åŠ æ–°å‘˜å·¥" <<endl;
                         i--;
                         break;
                 }
                 newSpace[numOfEmp+i] = temp;
-                // //Ìí¼Ó³ÉÔ±µ½ÎÄ¼ş
+                // //æ·»åŠ æˆå‘˜åˆ°æ–‡ä»¶
                 // addEmployeeToFile(temp);
     
             }
-            //ÊÍ·ÅÔ­ÓĞ¿Õ¼ä
+            //é‡Šæ”¾åŸæœ‰ç©ºé—´
             delete [] empArr;
-            //¸üĞÂ¿Õ¼äºÍ¸öÊı
+            //æ›´æ–°ç©ºé—´å’Œä¸ªæ•°
             empArr = newSpace;
             numOfEmp = newSize;
         }else{
-            cout << "ÊäÈëÓĞÎó"  <<endl;
+            cout << "è¾“å…¥æœ‰è¯¯"  <<endl;
         }
         
     }
 
-    //ÏÔÊ¾Ö°¹¤ĞÅÏ¢
+    //æ˜¾ç¤ºèŒå·¥ä¿¡æ¯
     void display(){
-        // cout << "Ö°¹¤±àºÅ£º" << id << " Ö°¹¤ĞÕÃû£º" << name << "    ¸ÚÎ»£º" << department << "  ¸ÚÎ»Ö°Ôğ£º" << endl;
+        // cout << "èŒå·¥ç¼–å·ï¼š" << id << " èŒå·¥å§“åï¼š" << name << "    å²—ä½ï¼š" << department << "  å²—ä½èŒè´£ï¼š" << endl;
         if(numOfEmp == 0){
-            cout << "Ô±¹¤ĞÅÏ¢±íÎª¿Õ" << endl;
+            cout << "å‘˜å·¥ä¿¡æ¯è¡¨ä¸ºç©º" << endl;
             return;
         }
-        cout << "==========¹²ÓĞ" << numOfEmp  << "ÃûÔ±¹¤==========" <<endl;
+        cout << "==========å…±æœ‰" << numOfEmp  << "åå‘˜å·¥==========" <<endl;
         for(int i=0; i< numOfEmp; i++){
-            cout << "Ö°¹¤±àºÅ£º" << empArr[i]->id << "\tÖ°¹¤ĞÕÃû£º" << empArr[i]->name << "\t¸ÚÎ»£º" << empArr[i]->department << "\t¸ÚÎ»Ö°Ôğ£º" << empArr[i]->position << endl;
+            cout << "èŒå·¥ç¼–å·ï¼š" << empArr[i]->id << "\tèŒå·¥å§“åï¼š" << empArr[i]->name << "\tå²—ä½ï¼š" << empArr[i]->department << "\tå²—ä½èŒè´£ï¼š" << empArr[i]->position << endl;
         }
     }
 
-    //É¾³ıÀëÖ°Ô±¹¤
+    //åˆ é™¤ç¦»èŒå‘˜å·¥
     void deleteEmp(){
-        cout << "ÇëÊäÈëÒªÉ¾³ıµÄÔ±¹¤±àºÅ£º" << endl;
+        cout << "è¯·è¾“å…¥è¦åˆ é™¤çš„å‘˜å·¥ç¼–å·ï¼š" << endl;
         int id;
         cin >> id;
         bool flag = false;
         // EmployeeBase * del = NULL;
-        //²éÕÒÔ±¹¤
+        //æŸ¥æ‰¾å‘˜å·¥
         for(int i=0; i< numOfEmp; i++){
             if(empArr[i]->id == id){
-                flag = true;//ÕÒµ½¸ÃÔ±¹¤
-                // del = empArr[i];//¼ÇÂ¼µ±Ç°¶ÔÏóµØÖ·
-                delete empArr[i];//ÊÍ·Åµ±Ç°¿Õ¼ä
+                flag = true;//æ‰¾åˆ°è¯¥å‘˜å·¥
+                // del = empArr[i];//è®°å½•å½“å‰å¯¹è±¡åœ°å€
+                delete empArr[i];//é‡Šæ”¾å½“å‰ç©ºé—´
             }
-            if(flag){//É¾³ı¸ÃÔ±¹¤
+            if(flag){//åˆ é™¤è¯¥å‘˜å·¥
                 if(i+1 < numOfEmp){
                     empArr[i] = empArr[i+1];
                 }else{
@@ -297,72 +297,72 @@ public:
             }
         }
         if(!flag){
-            cout << "±àºÅÎª" << id << "µÄÔ±¹¤²»´æÔÚ" << endl;
+            cout << "ç¼–å·ä¸º" << id << "çš„å‘˜å·¥ä¸å­˜åœ¨" << endl;
         }
     }
 
-    //ĞŞ¸ÄÖ°¹¤ĞÅÏ¢
+    //ä¿®æ”¹èŒå·¥ä¿¡æ¯
     void changeInfo(){
-        cout << "ÇëÊäÈëĞŞ¸ÄÔ±¹¤µÄ±àºÅ£º" << endl;
+        cout << "è¯·è¾“å…¥ä¿®æ”¹å‘˜å·¥çš„ç¼–å·ï¼š" << endl;
         int id;
         cin >> id;
         bool flag = false;
         // EmployeeBase * del = NULL;
-        //²éÕÒÔ±¹¤
+        //æŸ¥æ‰¾å‘˜å·¥
         for(int i=0; i< numOfEmp; i++){
             if(empArr[i]->id == id){
-                flag = true;//ÕÒµ½¸ÃÔ±¹¤
-                cout << "²éµ½£º" << id << "ºÅÔ±¹¤"<< endl;
-                cout << "ÇëÊäÈëĞÂÖ°¹¤ºÅ£º" << endl;
+                flag = true;//æ‰¾åˆ°è¯¥å‘˜å·¥
+                cout << "æŸ¥åˆ°ï¼š" << id << "å·å‘˜å·¥"<< endl;
+                cout << "è¯·è¾“å…¥æ–°èŒå·¥å·ï¼š" << endl;
                 int n_id;
                 cin >> n_id;
                 empArr[i]->changeId(n_id);
-                cout << "ÇëÊäÈëĞÂĞÕÃû£º" << endl;
+                cout << "è¯·è¾“å…¥æ–°å§“åï¼š" << endl;
                 string n_name;
                 cin >> n_name;
                 empArr[i]->changeName(n_name);
-                cout << "ÇëÊäÈë¸ÚÎ»£º" << endl;
-                cout << "1¡¢ÆÕÍ¨Ö°¹¤£º" <<endl;
-                cout << "2¡¢¾­Àí£º" <<endl;
-                cout << "3¡¢ÀÏ°å£º" <<endl;
+                cout << "è¯·è¾“å…¥å²—ä½ï¼š" << endl;
+                cout << "1ã€æ™®é€šèŒå·¥ï¼š" <<endl;
+                cout << "2ã€ç»ç†ï¼š" <<endl;
+                cout << "3ã€è€æ¿ï¼š" <<endl;
                 int n_department_id;
                 cin >> n_department_id;
                 empArr[i]->changeDepartment(n_department_id);
-                cout << "ĞŞ¸Ä³É¹¦" << endl;
+                cout << "ä¿®æ”¹æˆåŠŸ" << endl;
                 break;
             }
         }
         if(!flag){
-            cout << "±àºÅÎª" << id << "µÄÔ±¹¤²»´æÔÚ" << endl;
+            cout << "ç¼–å·ä¸º" << id << "çš„å‘˜å·¥ä¸å­˜åœ¨" << endl;
         }
 
     }
 
 
-    //²éÕÒÔ±¹¤ĞÅÏ¢
+    //æŸ¥æ‰¾å‘˜å·¥ä¿¡æ¯
     void findEmployee(){
-        cout << "ÇëÊäÈëÒª²éÕÒÔ±¹¤µÄ±àºÅ»òĞÕÃû£º" << endl;
+        cout << "è¯·è¾“å…¥è¦æŸ¥æ‰¾å‘˜å·¥çš„ç¼–å·æˆ–å§“åï¼š" << endl;
         string name_id;
         cin >> name_id;
         bool flag = false;
         // EmployeeBase * del = NULL;
-        //²éÕÒÔ±¹¤
+        //æŸ¥æ‰¾å‘˜å·¥
         for(int i=0; i< numOfEmp; i++){
             string s = "";
-            string idStr = s + to_string(empArr[i]->id);//to_string()½«Æä×ª»»Îª×Ö·û´®
+            string idStr = s + to_string(empArr[i]->id);//to_string()å°†å…¶è½¬æ¢ä¸ºå­—ç¬¦ä¸²
             if(idStr == name_id || empArr[i]->name == name_id){
-                flag = true;//ÕÒµ½¸ÃÔ±¹¤
-                cout << "Ö°¹¤±àºÅ£º" << empArr[i]->id << "\tÖ°¹¤ĞÕÃû£º" << empArr[i]->name << "\t¸ÚÎ»£º" << empArr[i]->department << "\t¸ÚÎ»Ö°Ôğ£º" << empArr[i]->position << endl;
+                flag = true;//æ‰¾åˆ°è¯¥å‘˜å·¥
+                cout << "èŒå·¥ç¼–å·ï¼š" << empArr[i]->id << "\tèŒå·¥å§“åï¼š" << empArr[i]->name << "\tå²—ä½ï¼š" << empArr[i]->department << "\tå²—ä½èŒè´£ï¼š" << empArr[i]->position << endl;
                 break;
             }
         }
         if(!flag){
-            cout << "Ô±¹¤²»´æÔÚ" << endl;
+            cout << "å‘˜å·¥ä¸å­˜åœ¨" << endl;
         }
     }
 
 
-    //Ô±¹¤ĞÅÏ¢°´±àºÅË³ĞòÅÅÁĞ
+    //å‘˜å·¥ä¿¡æ¯æŒ‰ç¼–å·é¡ºåºæ’åˆ—
     void sort(){
         for(int i=numOfEmp-1; i>0; i--){
             for(int j=0; j<i;j++){
@@ -376,30 +376,30 @@ public:
     }
 
     
-    //²Ëµ¥¹¦ÄÜÊµÏÖ
+    //èœå•åŠŸèƒ½å®ç°
     int menu(){
         cout << "*****************************"  << endl;
-        cout << "******»¶Ó­Ê¹ÓÃÖ°¹¤¹ÜÀíÏµÍ³*****"  << endl;
-        cout << "********0.ÍË³ö¹ÜÀí³ÌĞò*******"  << endl;
-        cout << "********1.Ôö¼ÓÖ°¹¤ĞÅÏ¢*******"  << endl;
-        cout << "********2.ÏÔÊ¾Ö°¹¤ĞÅÏ¢*******"  << endl;
-        cout << "********3.É¾³ıÖ°¹¤ĞÅÏ¢*******"  << endl;
-        cout << "********4.ĞŞ¸ÄÖ°¹¤ĞÅÏ¢*******"  << endl;
-        cout << "********5.²éÕÒÖ°¹¤ĞÅÏ¢*******"  << endl;
-        cout << "********6.°´ÕÕ±àºÅÅÅĞò*******"  << endl;
-        cout << "********7.Çå¿ÕËùÓĞÎÄµµ*******"  << endl;
+        cout << "******æ¬¢è¿ä½¿ç”¨èŒå·¥ç®¡ç†ç³»ç»Ÿ*****"  << endl;
+        cout << "********0.é€€å‡ºç®¡ç†ç¨‹åº*******"  << endl;
+        cout << "********1.å¢åŠ èŒå·¥ä¿¡æ¯*******"  << endl;
+        cout << "********2.æ˜¾ç¤ºèŒå·¥ä¿¡æ¯*******"  << endl;
+        cout << "********3.åˆ é™¤èŒå·¥ä¿¡æ¯*******"  << endl;
+        cout << "********4.ä¿®æ”¹èŒå·¥ä¿¡æ¯*******"  << endl;
+        cout << "********5.æŸ¥æ‰¾èŒå·¥ä¿¡æ¯*******"  << endl;
+        cout << "********6.æŒ‰ç…§ç¼–å·æ’åº*******"  << endl;
+        cout << "********7.æ¸…ç©ºæ‰€æœ‰æ–‡æ¡£*******"  << endl;
         cout << "*****************************"  << endl;
         cout << endl;
-        cout << "ÇëÊäÈëÄãµÄÑ¡Ôñ£º" << endl;
+        cout << "è¯·è¾“å…¥ä½ çš„é€‰æ‹©ï¼š" << endl;
         int choice;
         cin >> choice;
         return choice;
     }
 
-    //ÍË³öµ±Ç°ÏµÍ³
+    //é€€å‡ºå½“å‰ç³»ç»Ÿ
     bool exit(){
-        cout << "ÊÇ·ñÍË³öÏµÍ³£¿" << endl;
-        cout << "1.ÊÇ/0.·ñ" << endl;
+        cout << "æ˜¯å¦é€€å‡ºç³»ç»Ÿï¼Ÿ" << endl;
+        cout << "1.æ˜¯/0.å¦" << endl;
         bool flag = 0;
         cin >> flag;
         return flag;
@@ -409,9 +409,9 @@ public:
 
 int main(){
     EmployeeAPP app;
-    //ÏµÍ³³õÊ¼»¯
-    app.inti_numOfEmp();//³õÊ¼»¯Êı×é
-    app.init();//½«ÎÄ¼şÊı¾İ¶ÁÈëÊı×é
+    //ç³»ç»Ÿåˆå§‹åŒ–
+    app.inti_numOfEmp();//åˆå§‹åŒ–æ•°ç»„
+    app.init();//å°†æ–‡ä»¶æ•°æ®è¯»å…¥æ•°ç»„
     app.refreshFile();
     while(1){
         int choose;
@@ -419,7 +419,7 @@ int main(){
         switch(choose){
             case 0:
                 if(app.exit()){
-                    cout << "³É¹¦ÍË³ö" << endl;
+                    cout << "æˆåŠŸé€€å‡º" << endl;
                     return 0;
                 }
                 break;
@@ -441,7 +441,7 @@ int main(){
             case 5:
                 app.findEmployee();
                 break;
-            case 6://ÅÅĞò
+            case 6://æ’åº
                 app.sort();
                 app.refreshFile();
                 break;
@@ -450,7 +450,7 @@ int main(){
                 break;
 
             default:
-                cout << "ÊäÈë´íÎó" << endl;
+                cout << "è¾“å…¥é”™è¯¯" << endl;
                 break;
         }
         system("pause");

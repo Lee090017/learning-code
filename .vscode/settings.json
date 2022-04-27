@@ -6,7 +6,8 @@
         "string": "cpp",
         "iosfwd": "cpp",
         "new": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "typeinfo": "cpp"
     },
     // "code-runner.executorMap":{
     //     "cpp": "chcp 65001 >null && cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
