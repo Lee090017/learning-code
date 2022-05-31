@@ -1,9 +1,9 @@
 /*
  * @Author: your name
  * @Date: 2022-04-29 17:38:42
- * @LastEditTime: 2022-04-29 17:54:59
- * @LastEditors: Please set LastEditors
- * @Description: listÈİÆ÷°¸Àı
+ * @LastEditTime: 2022-05-26 16:09:31
+ * @LastEditors: Lee090017 455938969@qq.com
+ * @Description: listå®¹å™¨æ¡ˆä¾‹
  * @FilePath: \learningCode\project_05\listTest2.cpp
  */
 #include<iostream>
@@ -13,9 +13,9 @@
 using namespace std;
 
 /*
-°¸ÀıÃèÊö£º½«Person×Ô¶¨ÒåÊı¾İÀàĞÍ½øĞĞÅÅĞò£¬PersonÖĞÊôĞÔÓĞĞÕÃû¡¢ÄêÁä¡¢Éí¸ß
+æ¡ˆä¾‹æè¿°ï¼šå°†Personè‡ªå®šä¹‰æ•°æ®ç±»å‹è¿›è¡Œæ’åºï¼ŒPersonä¸­å±æ€§æœ‰å§“åã€å¹´é¾„ã€èº«é«˜
 
-ÅÅĞò¹æÔò£º°´ÕÕÄêÁä½øĞĞÉıĞò£¬Èç¹ûÄêÁäÏàÍ¬°´ÕÕÉí¸ß½øĞĞ½µĞò
+æ’åºè§„åˆ™ï¼šæŒ‰ç…§å¹´é¾„è¿›è¡Œå‡åºï¼Œå¦‚æœå¹´é¾„ç›¸åŒæŒ‰ç…§èº«é«˜è¿›è¡Œé™åº
 
 */
 
@@ -47,7 +47,7 @@ void printList(const list<Person> &l){
         return;
     }
     for(list<Person>::const_iterator it = l.begin(); it != l.end(); it++){
-        cout << "ĞÕÃû£º" << (*it).name << "\tÄêÁä£º" << (*it).age << "\tÉí¸ß£º" << (*it).height << endl;
+        cout << "å§“åï¼š" << (*it).name << "\tå¹´é¾„ï¼š" << (*it).age << "\tèº«é«˜ï¼š" << (*it).height << endl;
     }
 }
 
@@ -65,7 +65,7 @@ int main(){
 
     l1.sort(myCompare);
 
-    cout << "====================ÅÅĞòºó====================" << endl;
+    cout << "====================æ’åºå====================" << endl;
 
     printList(l1);
 
