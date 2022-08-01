@@ -1,8 +1,8 @@
 /*
  * @Author: Lee090017 455938969@qq.com
  * @Date: 2022-05-26 16:59:07
- * @LastEditors: Lee090017 455938969@qq.com
- * @LastEditTime: 2022-05-31 15:42:12
+ * @LastEditors: lishu 455938969@qq.com
+ * @LastEditTime: 2022-07-07 17:36:33
  * @FilePath: \learningCode\project_05\mapTest1.cpp
  * @Description: map
  * 
@@ -193,8 +193,32 @@ void test05(){
     cout << "====================" << endl;
 }
 
+/**
+ * @brief 
+ * 
+ * map的访问
+ * 
+利用 at 或者 []
+区别：map访问元素建议使用.at()，如果[]访问没有这个key的话，会自动添加一个key，value是默认值，这可能不是我们想要的效果
+ * 
+ */
+void test06(){
+    map<int,string> m1;
+    m1.insert(make_pair(1,"lishu"));
+    m1.insert(make_pair(2,"gaogao"));
+    m1.insert(make_pair(3,"wangwang"));
+
+    cout << m1.at(1) << endl;
+    cout << m1[1] << endl;
+    cout << m1.size() << endl;
+
+    cout << m1[4] << endl;
+    cout << m1.size() << endl;//创建新的数据
+    
+}
+
 int main(){
-    test05();
+    test06();
 
     return 0;
 }

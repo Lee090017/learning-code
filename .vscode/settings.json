@@ -1,5 +1,20 @@
 {
     "open-in-browser.default": "{\"open-in-browser.default\":\"Chrome\"}",
+    "files.associations": {
+        "iostream": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "initializer_list": "cpp",
+        "algorithm": "cpp",
+        "numeric": "cpp",
+        "ostream": "cpp",
+        "random": "cpp",
+        "bitset": "cpp"
+    },
     // "code-runner.executorMap":{
     //     "cpp": "chcp 65001 >null && cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     // }
